@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MasterRangers</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<body class="body_backgorund">
+	<center>
+		<img src="title.png" width="300">
+		<h3 style="width:100%;"><i>Press <b>r, g, y, p, b</b> to upload &nbsp;</i> Master Rangers</h3>
+			<canvas id="c" width="700" height=500" style="border-style:ridge; border-width:1em;align-self:center;"></canvas>				
+		<style>
+			body{
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment:fixed;
+            background-size:cover;
+        }
+		.body_backgorund 
+{
+    background-image:url(backg.jpg);
+    background-position:center;
+    background-size:cover;
+}
+h3
+{
+	width: 1000px;
+	background-color: white;
+	display: inline-block;
+}
+		</style>
+	<script>
+		const r=new Image();
+		const g=new Image();
+		const y=new Image();
+		const p=new Image();
+		const b=new Image();
+		r.src="rr.png";
+		g.src="gr.png";
+		y.src="yr.png";
+		p.src="pr.png";
+		b.src="br.png";
+		const ctx=document.getElementById("c");
+		const c=ctx.getContext("2d");
+		c.fillStyle="white";
+		c.rect(0, 0, ctx.width, ctx.height);
+		c.fill();
+		window.addEventListener('keydown',(event)=>{
+			if(event.key==='r'){
+				c.drawImage(r,0,100,280,400);	
+			}
+			if(event.key==='g'){
+				c.drawImage(g,100,100,280,420);
+			}
+			if(event.key==='y'){
+				c.drawImage(y,200,100,280,400);
+			}
+			if(event.key==='p'){
+				c.drawImage(p,300,100,280,400);
+			}
+			if(event.key==='b'){
+				c.drawImage(b,400,100,400,400);
+			}
+		});
+	</script>
+	</center>
+</body>
+</html>
